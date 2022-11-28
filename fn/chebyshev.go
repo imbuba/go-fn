@@ -4,6 +4,7 @@ package fn
 
 //The Chebyshev series.
 
+//nolint:unused
 func chebyshev_init(dos []float64, nos int, eta float64) int {
 	if nos < 1 {
 		return 0

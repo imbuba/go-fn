@@ -15,7 +15,7 @@ func Fact(n int64) float64 {
 	}
 	if n < 101 {
 		return factorial[n]
-	} //else 
+	} //else
 
 	f := factorial[100]
 	for i = 101; i <= n; i++ {
@@ -24,15 +24,14 @@ func Fact(n int64) float64 {
 	return f
 }
 
-//FactInt(n) = n*FactInt(n-1)
+// FactInt(n) = n*FactInt(n-1)
 func FactInt(n int64) int64 {
 	return PartialFactInt(n, 0)
 }
 
-
 func LnFact(nn float64) float64 {
 
-n:= trunc(nn)
+	n := trunc(nn)
 	var i float64
 
 	switch {
@@ -49,16 +48,15 @@ n:= trunc(nn)
 	default: // use gamma approximation
 		return LnFactBig(n)
 	}
-	return nan // should never happen
 }
 
-//LnFactBig(n) = Gamma(n+1)
+// LnFactBig(n) = Gamma(n+1)
 func LnFactBig(n float64) float64 {
-	n= trunc(n)
+	n = trunc(n)
 	return LnΓ(n + 1)
 }
 
-//PartialFactInt returns Fact(n)/Fact(m)
+// PartialFactInt returns Fact(n)/Fact(m)
 func PartialFactInt(n int64, m int64) int64 {
 	if n == m {
 		return 1
@@ -66,7 +64,7 @@ func PartialFactInt(n int64, m int64) int64 {
 	return n * PartialFactInt(n-1, m)
 }
 
-//LnPartialFact returns LnFact(n)-LnFact(m)
+// LnPartialFact returns LnFact(n)-LnFact(m)
 func LnPartialFact(n, m float64) float64 {
 	if n == m {
 		return 0

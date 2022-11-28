@@ -60,25 +60,24 @@ func betaContinuedFraction(α, β, x float64) float64 {
 	}
 
 	panic("betaContinuedFraction(): α or β too big, or maxIter too small")
-	return -1.00
 }
 
-//B returns the Beta function.
+// B returns the Beta function.
 func B(x float64, y float64) float64 {
 	return Γ(x) * Γ(y) / Γ(x+y)
 }
 
-//LogBeta function
+// LogBeta function
 func LnB(x float64, y float64) float64 {
 	return LnΓ(x) + LnΓ(y) - LnΓ(x+y)
 }
 
-//BetaIncReg returns the Non-regularized incomplete Beta function.
+// BetaIncReg returns the Non-regularized incomplete Beta function.
 func IB(a, b, x float64) float64 {
 	return BetaIncReg(a, b, x) * math.Exp(LnΓ(a)+LnΓ(b)-LnΓ(a+b))
 }
 
-//BetaIncReg returns the Regularized incomplete Beta function.
+// BetaIncReg returns the Regularized incomplete Beta function.
 func BetaIncReg(α, β, x float64) float64 {
 	var y, res float64
 	y = math.Exp(LnΓ(α+β) - LnΓ(α) - LnΓ(β) + α*math.Log(x) + β*math.Log(1.0-x))

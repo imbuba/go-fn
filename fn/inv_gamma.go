@@ -1,4 +1,4 @@
-// Incomplete Gamma functions 
+// Incomplete Gamma functions
 // from Cephes Math Library Release 2.8:  June, 2000
 // Copyright 1985, 1987, 2000 by Stephen L. Moshier
 
@@ -56,7 +56,6 @@ func IGamC(a, x float64) float64 {
 	ax = a*math.Log(x) - x - LnΓ(a)
 	if ax < -MAXLOG {
 		panic("IGamC: UNDERFLOW")
-		return 0.0
 	}
 	ax = math.Exp(ax)
 
@@ -144,7 +143,6 @@ func IGam(a, x float64) float64 {
 	ax = a*math.Log(x) - x - LnΓ(a)
 	if ax < -MAXLOG {
 		panic("IGam: UNDERFLOW")
-		return 0.0
 	}
 	ax = math.Exp(ax)
 
